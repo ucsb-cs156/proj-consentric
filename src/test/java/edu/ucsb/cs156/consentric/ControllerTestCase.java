@@ -1,0 +1,36 @@
+package edu.ucsb.cs156.consentric;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import edu.ucsb.cs156.consentric.services.CurrentUserService;
+import edu.ucsb.cs156.consentric.services.GrantedAuthoritiesService;
+import edu.ucsb.cs156.consentric.services.wiremock.WiremockService;
+import edu.ucsb.cs156.consentric.testconfig.TestConfig;
+import java.io.UnsupportedEncodingException;
+import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Import;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+
+@ActiveProfiles("test")
+@Import(TestConfig.class)
+public abstract class ControllerTestCase {
+  @Autowired public CurrentUserService currentUserService;
+
+  @Autowired public GrantedAuthoritiesService grantedAuthoritiesService;
+
+  @Autowired public MockMvc mockMvc;
+
+  @Autowired public ObjectMapper mapper;
+
+  @MockitoBean WiremockService mockWiremockService;
+
+  protected Map<String, Object> responseToJson(MvcResult result)
+      throws UnsupportedEncodingException, JsonProcessingException {
+    String responseString = result.getResponse().getContentAsString();
+    return mapper.readValue(responseString, Map.class);
+  }
+}

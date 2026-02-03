@@ -47,9 +47,9 @@
 
   <properties>
     <java.version>21</java.version>
-    <mainClass>edu.ucsb.cs156.example.ExampleApplication</mainClass>
-    <app.package>edu.ucsb.cs156.example</app.package>
-    <app.packagePath>edu/ucsb/cs156/example</app.packagePath>
+    <mainClass>edu.ucsb.cs156.consentric.ConsentricApplication</mainClass>
+    <app.package>edu.ucsb.cs156.consentric</app.package>
+    <app.packagePath>edu/ucsb/cs156/consentric</app.packagePath>
     <targetClasses>${targetClasses:edu.ucsb.cs156.*}</targetClasses>
   </properties>
 
@@ -252,8 +252,8 @@
             <exclude>**/${app.packagePath}/controllers/FrontendProxyController.*</exclude>
             <exclude>**/${app.packagePath}/services/CurrentUserServiceImpl.*</exclude>
             <exclude>**/${app.packagePath}/services/GrantedAuthoritiesService.*</exclude>
-            <exclude>**/${app.packagePath}/ExampleApplication.*</exclude>
-            <exclude>**/edu/ucsb/cs156/example/services/wiremock/*</exclude>
+            <exclude>**/${app.packagePath}/ConsentricApplication.*</exclude>
+            <exclude>**/${app.packagePath}/services/wiremock/*</exclude>
           </excludes>
         </configuration>
         <executions>
@@ -338,7 +338,7 @@
             <param>${app.package}.controllers.FrontendController</param>
             <param>${app.package}.controllers.FrontendProxyController</param>
             <param>${app.package}.services.CurrentUserServiceImpl</param>
-            <param>${app.package}.ExampleApplication</param>
+            <param>${app.package}.ConsentricApplication</param>
             <param>${app.package}.config.SecurityConfig</param>
             <param>${app.package}.config.SpaCsrfTokenRequestHandler</param>
             <param>${app.package}.config.CsrfCookieFilter</param>
