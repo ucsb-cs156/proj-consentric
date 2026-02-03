@@ -8,7 +8,7 @@ Deployments:
 # Versions
 * Java: 21
 * node: 22.18.0
-See [docs/versions.md](docs/versions.md) for more information on upgrading versions.
+See [`docs/versions.md`](docs/versions.md) for more information on upgrading versions.
 
 
 # Overview of application
@@ -16,7 +16,7 @@ See [docs/versions.md](docs/versions.md) for more information on upgrading versi
 This application is for the purpose of managing informed consent for research
 studies that involve obtaining informed consent from students enrolled in courses.
 
-See docs/DESIGN.md for more details.
+See [`docs/DESIGN.md`](docs/DESIGN.md) for more details.
 
 # Setup before running application
 
